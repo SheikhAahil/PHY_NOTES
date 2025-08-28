@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics Notes - Work and Energy</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7fa;
+      color: #333;
+    }
+
+    header {
+      background: #0066cc;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    h2 {
+      margin-top: 20px;
+      padding: 10px;
+      background: #dddddd;
+      border-left: 4px solid #0066cc;
+    }
+
+    .section {
+      margin: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .question {
+      margin: 8px 0;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .question:hover {
+      background: #eef5ff;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 5px;
+      padding: 10px;
+      background: #eaf4ff;
+      border-left: 3px solid #0066cc;
+      border-radius: 4px;
+    }
+
+    .show {
+      display: block;
+      animation: fadeIn 0.4s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      padding: 15px;
+      background: #0066cc;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PHYSICS Chapter: Work and Energy</h1>
+  <p>Questions and Answers</p>
+</header>
+
+<div class="section">
+  <h2>Short Answer Type Questions</h2>
+
+  <div class="question">1) When is work said to be done?</div>
+  <div class="answer">Work is said to be done when a force is applied on a body and the body is displaced.</div>
+
+  <div class="question">6) What is the SI unit of work?</div>
+  <div class="answer">The SI unit of work is Joule (J), where 1 Joule = 1 Newton × 1 meter.</div>
+
+  <div class="question">8) Define energy.</div>
+  <div class="answer">Energy is defined as the ability to do work.</div>
+
+  <div class="question">16) Write the formula for Potential Energy.</div>
+  <div class="answer">Potential Energy (PE) = m × g × h</div>
+
+  <div class="question">21) Write the formula for Kinetic Energy.</div>
+  <div class="answer">Kinetic Energy (KE) = ½ × m × v²</div>
+</div>
+
+<div class="section">
+  <h2>Long Answer Type Questions</h2>
+  
+  <div class="question">3) Derive the expression for potential energy.</div>
+  <div class="answer">
+    <b>Solution:</b><br>
+    a) Force needed to lift a body = Weight = m × g N<br>
+    b) Work done = F × d = m × g × h<br>
+    c) Therefore, Potential Energy = m × g × h (J).
+  </div>
+
+  <div class="question">5) Explain conversion of Potential Energy into Kinetic Energy.</div>
+  <div class="answer">A snowball kept on a hill has potential energy due to its position. When released, this energy converts into kinetic energy as it rolls down.</div>
+</div>
+
+<footer>
+  <p>Made with ❤️ for Physics Learning</p>
+</footer>
+
+<script>
+  const questions = document.querySelectorAll(".question");
+
+  questions.forEach(q => {
+    q.addEventListener("click", () => {
+      const answer = q.nextElementSibling;
+      answer.classList.toggle("show");
+    });
+  });
+</script>
+
+</body>
+</html>
