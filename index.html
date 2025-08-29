@@ -5,65 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Physics Notes - Work </title>
   <style>
-    /* Animation Overlay Styles */
-    #homepage-overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: linear-gradient(135deg, #0066cc 0%, #19a7ff 70%, #ffffff 100%);
-      z-index: 10000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 1.2s cubic-bezier(.68,-0.55,.27,1.55);
-      animation: overlayIn 1.5s;
-    }
-    #homepage-overlay.hide {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 1.2s cubic-bezier(.68,-0.55,.27,1.55);
-    }
-    @keyframes overlayIn {
-      from {opacity: 0;}
-      to   {opacity: 1;}
-    }
-    @keyframes titlePop {
-      0% {transform: scale(0.8) translateY(40px); opacity: 0;}
-      80% {transform: scale(1.08) translateY(-5px);}
-      100% {transform: scale(1) translateY(0); opacity: 1;}
-    }
-    .overlay-title {
-      color: #fff;
-      letter-spacing: 2px;
-      font-size: 2.5rem;
-      font-weight: bold;
-      text-shadow: 2px 6px 24px #21304b90;
-      animation: titlePop 1.3s cubic-bezier(0.25,1.5,0.5,1.0);
-      margin-bottom: 24px;
-    }
-    .overlay-desc {
-      color: #eaf6ff;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-      animation: fadeDesc 1s .8s both;
-      margin-bottom: 24px;
-    }
-    @keyframes fadeDesc {
-      from {opacity: 0; transform: translateY(20px);}
-      to   {opacity: 1; transform: translateY(0);}
-    }
-    .loader {
-      width: 54px; height: 54px; border: 6px solid #bbe7ff;
-      border-radius: 50%;
-      border-top: 6px solid #fff;
-      border-bottom: 6px solid #19a7ff;
-      animation: spin 1s linear infinite;
-      margin: 20px auto 0 auto;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0);}
-      100% { transform: rotate(360deg);}
-    }
+   /* Opening Animation Styles */
+#opening-animation {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: linear-gradient(135deg, #0066cc 0%, #96d2ff 100%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease;
+}
+
+.opening-content {
+  text-align: center;
+  color: #fff;
+  animation: zoomText 1.6s ease;
+}
+
+#opening-animation h1 {
+  font-size: 3.2em;
+  letter-spacing: 2px;
+  margin-bottom: 0.2em;
+  font-weight: bold;
+  text-shadow: 0 2px 12px rgba(0,75,185,0.17);
+}
+
+#opening-animation h2 {
+  font-size: 2em;
+  margin-bottom: 0.6em;
+}
+
+#opening-animation p {
+  font-size: 1.3em;
+  opacity: 0.7;
+}
+
+@keyframes zoomText {
+  0% { transform: scale(0.7); opacity: 0; }
+  70% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
 
     /* Main Content Styles (as before) */
     body {
@@ -133,6 +116,14 @@
   </style>
 </head>
 <body>
+<!-- Opening Animation Overlay -->
+<div id="opening-animation">
+  <div class="opening-content">
+    <h1>Physics</h1>
+    <h2>Chapter: Work and Energy</h2>
+    <p>Questions & Answers</p>
+  </div>
+</div>
 
 <header>
   <h1>PHYSICS Chapter: Work</h1>
@@ -269,6 +260,20 @@
       answer.classList.toggle("show");
     });
   });
+  
+  // Opening animation: fade out after 2.3 seconds
+  window.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+      const anim = document.getElementById("opening-animation");
+      if (anim) {
+        anim.style.opacity = "0";
+        setTimeout(function() {
+          anim.style.display = "none";
+        }, 900); // matches CSS transition speed
+      }
+    }, 2300); // duration of opening animation
+  });
+
 </script>
 
 </body>
