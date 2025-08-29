@@ -142,6 +142,93 @@
       from {opacity: 0;}
       to {opacity: 1;}
     }
+    
+    /* Orbiting Balls Styles */
+    .orbit-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 400px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.1;
+    }
+    
+    .orbit-ball {
+      position: absolute;
+      border-radius: 50%;
+      animation: orbit 8s linear infinite;
+    }
+    
+    .orbit-ball-1 {
+      width: 15px;
+      height: 15px;
+      background: radial-gradient(circle at 30% 30%, #4da6ff, #0066cc);
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation-delay: 0s;
+    }
+    
+    .orbit-ball-2 {
+      width: 12px;
+      height: 12px;
+      background: radial-gradient(circle at 30% 30%, #ff6b6b, #cc0000);
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      animation-delay: -2s;
+    }
+    
+    .orbit-ball-3 {
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle at 30% 30%, #4da6ff, #0066cc);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation-delay: -4s;
+    }
+    
+    .orbit-ball-4 {
+      width: 14px;
+      height: 14px;
+      background: radial-gradient(circle at 30% 30%, #ff6b6b, #cc0000);
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      animation-delay: -6s;
+    }
+    
+    .orbit-ball-5 {
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle at 30% 30%, #4da6ff, #0066cc);
+      top: 15%;
+      right: 15%;
+      animation-delay: -1s;
+    }
+    
+    .orbit-ball-6 {
+      width: 16px;
+      height: 16px;
+      background: radial-gradient(circle at 30% 30%, #ff6b6b, #cc0000);
+      bottom: 15%;
+      left: 15%;
+      animation-delay: -3s;
+    }
+    
+    @keyframes orbit {
+      from {
+        transform: rotate(0deg) translateX(200px) rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg) translateX(200px) rotate(-360deg);
+      }
+    }
+    
     footer {
       margin-top: 30px;
       text-align: center;
@@ -179,6 +266,16 @@
     <h2>Chapter: Work </h2>
     <p>Questions & Answers</p>
   </div>
+</div>
+
+<!-- Orbiting Balls Animation -->
+<div class="orbit-container">
+  <div class="orbit-ball orbit-ball-1"></div>
+  <div class="orbit-ball orbit-ball-2"></div>
+  <div class="orbit-ball orbit-ball-3"></div>
+  <div class="orbit-ball orbit-ball-4"></div>
+  <div class="orbit-ball orbit-ball-5"></div>
+  <div class="orbit-ball orbit-ball-6"></div>
 </div>
 
 <header>
